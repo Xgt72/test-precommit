@@ -9,7 +9,7 @@ describe('app', () => {
       .expect(200);
     expect(res.body).toMatchInlineSnapshot(`
       Object {
-        "foo": "boo",
+        "foo": "bar",
       }
     `);
   });
