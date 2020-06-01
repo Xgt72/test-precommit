@@ -7,18 +7,15 @@
     "lint": "npx eslint --fix *.js src test *.js",
     "build": "npx babel  src -d build",
     "start": "nodemon --exec ./node_modules/@babel/node/bin/babel-node.js src/index",
-    "test": "jest",
-    "precommit": "lint-staged && yarn test"
+    "test": "jest"
   },
   "lint-staged": {
-    "**/*.js": [
-      "yarn lint",
-      "git add"
-    ]
+    "*.js": "eslint --cache --fix",
+    "*.{js,css,md}": "prettier --write"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run precommit"
+      "pre-commit": "lint-staged && npm test"
     }
   },
   "keywords": [],
@@ -38,7 +35,7 @@
     "eslint-plugin-import": "^2.18.2",
     "husky": "^4.2.5",
     "jest": "^24.9.0",
-    "lint-staged": "^9.2.5",
+    "lint-staged": ">=10",
     "nodemon": "^1.19.1",
     "prettier": "^1.18.2",
     "supertest": "^4.0.2"
