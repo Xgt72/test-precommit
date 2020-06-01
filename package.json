@@ -10,7 +10,7 @@
     "test": "jest"
   },
   "lint-staged": {
-    "**/*.js": "yarn lint"
+    "*.js": "yarn lint"
   },
   "husky": {
     "hooks": {
