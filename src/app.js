@@ -12,4 +12,8 @@ app.get('/api/foo', (req, res) => {
   res.json({ foo: 'bar' });
 });
 
+app.get("/api/test", (req, res) => {
+  res.json({test: "Test"});
+})
+
 module.exports = app;
